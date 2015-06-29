@@ -1,0 +1,18 @@
+union Level {
+    Debug
+    Info
+    Warning
+    Error
+    Critical
+}
+
+struct Record {
+    level: Level
+    message: String
+}
+
+alias Logger = (Record) => Unit
+
+sub info(logger: Logger, message: String): Unit {
+    logger(Record{level: Info, message: message})
+}
