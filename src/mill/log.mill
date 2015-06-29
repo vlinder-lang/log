@@ -11,8 +11,8 @@ struct Record {
     message: String
 }
 
-alias Logger = (Record) => Unit
+alias Logger = (Record) => ()
 
-sub info(logger: Logger, message: String): Unit {
+sub info(logger: Logger, message: String): () {
     logger(Record{level: Info, message: message})
 }
