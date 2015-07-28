@@ -10,7 +10,7 @@ union Level {
 
 struct Record {
     level: Level
-    message: String
+    message: test.String
 }
 
 alias Logger = (Record) => ()
