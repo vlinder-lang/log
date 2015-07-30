@@ -16,5 +16,5 @@ struct Record {
 alias Logger = (Record) => ()
 
 sub info(logger: Logger, message: text.String): () {
-    logger(Record{level: Info, message: message})
+    logger(mk Record{level: Info, message: message})
 }
