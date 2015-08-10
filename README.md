@@ -1,2 +1,2 @@
 # log
-Mill logging library.
+Vlinder logging library.
