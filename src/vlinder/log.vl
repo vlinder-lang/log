@@ -13,7 +13,7 @@ struct Record {
     message: text.String
 }
 
-alias Logger = (Record) => ()
+typealias Logger = (Record) => ()
 
 sub info(logger: Logger, message: text.String): () {
     logger(mk Record{level: Info, message: message})
