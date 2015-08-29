@@ -16,5 +16,5 @@ struct Record {
 typealias Logger = (Record) => ()
 
 sub info(logger: Logger, message: text.String): () {
-    logger(mk Record{level: Info, message: message})
+    logger(Record{level: Info, message: message})
 }
