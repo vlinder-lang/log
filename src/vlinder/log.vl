@@ -15,6 +15,26 @@ struct Record {
 
 typealias Logger = (Record) => ()
 
+sub log(logger: Logger, level: Level, message: text.String): () {
+    logger(Record{level: level, message: message})
+}
+
+sub debug(logger: Logger, message: text.String): () {
+    log(logger, Debug, message)
+}
+
 sub info(logger: Logger, message: text.String): () {
-    logger(Record{level: Info, message: message})
+    log(logger, Info, message)
+}
+
+sub warning(logger: Logger, message: text.String): () {
+    log(logger, Warning, message)
+}
+
+sub error(logger: Logger, message: text.String): () {
+    log(logger, Error, message)
+}
+
+sub critical(logger: Logger, message: text.String): () {
+    log(logger, Critical, message)
 }
