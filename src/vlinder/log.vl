@@ -10,31 +10,31 @@ union Level {
 
 struct Record {
     level: Level
-    message: text.String
+    message: text.T
 }
 
 typealias Logger = (Record) => ()
 
-sub log(logger: Logger, level: Level, message: text.String): () {
+sub log(logger: Logger, level: Level, message: text.T): () {
     logger(Record{level: level, message: message})
 }
 
-sub debug(logger: Logger, message: text.String): () {
+sub debug(logger: Logger, message: text.T): () {
     log(logger, Debug, message)
 }
 
-sub info(logger: Logger, message: text.String): () {
+sub info(logger: Logger, message: text.T): () {
     log(logger, Info, message)
 }
 
-sub warning(logger: Logger, message: text.String): () {
+sub warning(logger: Logger, message: text.T): () {
     log(logger, Warning, message)
 }
 
-sub error(logger: Logger, message: text.String): () {
+sub error(logger: Logger, message: text.T): () {
     log(logger, Error, message)
 }
 
-sub critical(logger: Logger, message: text.String): () {
+sub critical(logger: Logger, message: text.T): () {
     log(logger, Critical, message)
 }
